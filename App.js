@@ -1,30 +1,35 @@
+import React, { lazy, Suspense } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Platform } from 'react-native';
 import Button from './components/Button';
 import ImageViewer from './components/ImageViewer';
-import { WebView } from 'react-native-webview';
 
 const PlaceholderImage = require('./assets/background-image.png');
 
 export default function App() {
-  // return (
-  //   <View style={styles.container}>
-  //     <View style={styles.imageContainer}>
-  //       <ImageViewer placeholderImageSource={PlaceholderImage} />
-  //     </View>
-  //     <Text style={{ color: '#fff' }}>Open up App.js to start working on your app!</Text>
-  //     <View style={styles.footerContainer}>
-  //       <Button theme="primary" label="Choose a photo" />
-  //       <Button label="Use this photo" />
-  //     </View>
-  //     <StatusBar style="auto" />
-  //   </View>
-  // );
+
+  if(Platform.OS === 'web'){
   return (
-    <WebView
-      source={{ uri: 'https://www.naver.com' }}
-    />
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <ImageViewer placeholderImageSource={PlaceholderImage} />
+      </View>
+      <Text style={{ color: '#fff' }}>Open up App.js to start working on your app!</Text>
+      <View style={styles.footerContainer}>
+        <Button theme="primary" label="Choose a photo" />
+        <Button label="Use this photo" />
+      </View>
+      <StatusBar style="auto" />
+    </View>
   );
+  } else {
+    const WebView = lazy(() => import('react-native-webview'));
+    return (
+      <Suspense fallback={<Text style={{ color: '#fff' }}>Page is Loading...</Text>}>
+        <WebView source={{ uri: 'https://www.naver.com' }} />
+      </Suspense>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
