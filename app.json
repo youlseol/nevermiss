@@ -18,6 +18,8 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.jeonjoonho.nevermiss",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
@@ -25,7 +27,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.jeonjoonho.nevermiss"
+      "package": "com.jeonjoonho.nevermiss",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
