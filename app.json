@@ -28,7 +28,17 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.jeonjoonho.nevermiss",
-      "versionCode": 1
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_SETTINGS",
+        "VIBRATE",
+        "READ_PHONE_STATE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
