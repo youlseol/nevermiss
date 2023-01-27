@@ -26,7 +26,7 @@ export default function App() {
     const WebView = lazy(() => import('react-native-webview'));
     return (
       <Suspense fallback={<Text style={{ color: '#fff' }}>Page is Loading...</Text>}>
-        <WebView source={{ uri: 'https://seolgame.netlify.app/' }} />
+        <WebView source={{ uri: 'https://vite-fe.vercel.app/' }} />
       </Suspense>
     );
   }
