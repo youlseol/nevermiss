@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Platform } from 'react-native';
+import { StyleSheet, Text, View, Image, Platform, SafeAreaView } from 'react-native';
 import Button from './components/Button';
 import ImageViewer from './components/ImageViewer';
 
@@ -25,11 +25,13 @@ export default function App() {
   } else {
     const WebView = lazy(() => import('react-native-webview'));
     return (
-      <Suspense fallback={<Text style={{ color: '#fff' }}>Page is Loading...</Text>}>
-        <View style={styles.container}>
-          <WebView source={{ uri: 'https://vite-fe.vercel.app/' }} />
-        </View>
-      </Suspense>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Suspense fallback={<Text style={{ color: '#fff' }}>Page is Loading...</Text>}>
+          <View style={styles.container}>
+            <WebView source={{ uri: 'https://vite-fe.vercel.app/' }} />
+          </View>
+        </Suspense>
+      </SafeAreaView>
     );
   }
 }
