@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Platform, SafeAreaView } from 'react-native';
 import Button from './components/Button';
 import ImageViewer from './components/ImageViewer';
+import WebView from 'react-native-webview';
 
 const PlaceholderImage = require('./assets/background-image.png');
 
@@ -23,15 +24,18 @@ export default function App() {
     </View>
   );
   } else {
-    const WebView = lazy(() => import('react-native-webview'));
+    // FIXME: lazy 사용 시 로딩 안 됨
+    // FIXME: WebApp loading 안 됨
     return (
-      <SafeAreaView style={{ flex: 1 }}>
-        <Suspense fallback={<Text style={{ color: '#fff' }}>Page is Loading...</Text>}>
-          <View style={styles.container}>
-            <WebView source={{ uri: 'https://vite-fe.vercel.app/' }} />
-          </View>
-        </Suspense>
-      </SafeAreaView>
+            <WebView 
+              allowsFullscreenVideo // Youtube FullScreen
+              textZoom={100} //Erratic TextSize
+              javaScriptEnabled={true} //JS Support
+              domStorageEnabled={true} //Cache
+              //source={{ uri: 'https://vite-fe.vercel.app/' }} />
+              //source={{ uri: 'https://clever-macaron-e3c43a.netlify.app/' }} />
+              //source={{ uri: 'https://next-e-commerce-example.vercel.app/' }} />
+              source={{ uri: 'https://poc-fe-murex.vercel.app/' }} />
     );
   }
 }
