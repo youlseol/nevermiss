@@ -2,16 +2,16 @@ import React, { lazy, Suspense } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Platform, SafeAreaView, Pressable  } from 'react-native';
 import Button from './components/Button';
-import ImageViewer from './components/ImageViewer';
-import WebView from 'react-native-webview';
+// import ImageViewer from './components/ImageViewer';
+// import WebView from 'react-native-webview';
 import * as Location from 'expo-location';
 import Speech from './Screens/Speech';
 
 const PlaceholderImage = require('./assets/background-image.png');
 
 export default function App() {
-  const [location1, setLocation1] = React.useState("Waitinig...");
-  const [errorMsg1, setErrorMsg1] = React.useState(null);
+  // const [location1, setLocation1] = React.useState("Waitinig...");
+  // const [errorMsg1, setErrorMsg1] = React.useState(null);
   
   // React.useEffect(() => {   
   //   (async () => {  
@@ -26,16 +26,16 @@ export default function App() {
   //   })();
   // }, []);
  
-  const onPressFunction = async () => {
-    let { status, requestPermission } = await Location.useForegroundPermissions();
-    if (status !== 'granted') {
-      setErrorMsg1('Permission to access location was denied1');
-      return;
-    }
+  // const onPressFunction = async () => {
+  //   let { status, requestPermission } = await Location.useForegroundPermissions();
+  //   if (status !== 'granted') {
+  //     setErrorMsg1('Permission to access location was denied1');
+  //     return;
+  //   }
 
-    let location1 = await Location.getCurrentPositionAsync({});
-    setLocation1(location1);
-  }
+  //   let location1 = await Location.getCurrentPositionAsync({});
+  //   setLocation1(location1);
+  // }
 
   // if(Platform.OS === 'web'){
   return (
@@ -49,9 +49,9 @@ export default function App() {
         <Text style={{ color: '#fff' }}>{errorMsg1}</Text> */}
         <Speech />
       </View>
-      <View style={styles.footerContainer}>
+      {/* <View style={styles.footerContainer}>
         <Button theme="primary" label="Set current location" onPress={onPressFunction} />
-      </View>
+      </View> */}
       <StatusBar style="auto" />
     </View>
   );

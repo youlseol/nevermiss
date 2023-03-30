@@ -30,8 +30,23 @@
     ],
     "ios": {
       "bundleIdentifier": "com.jeonjoonho.nevermiss",
-      "buildNumber": "1.0.0",
-      "supportsTablet": true
+      "buildNumber": "1.0.1",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "이 앱은 현재 위치 정보를 사용하려고 합니다.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "이 앱은 항상 위치 정보를 사용하려고 합니다.",
+        "NSLocationAlwaysUsageDescription": "이 앱은 항상 위치 정보를 사용하려고 합니다.",
+        "NSCameraUsageDescription": "이 앱은 카메라를 사용하려고 합니다.",
+        "NSMicrophoneUsageDescription": "이 앱은 마이크를 사용하려고 합니다.",
+        "NSPhotoLibraryUsageDescription": "이 앱은 사진 라이브러리를 사용하려고 합니다.",
+        "NSPhotoLibraryAddUsageDescription": "이 앱은 사진 라이브러리에 저장하려고 합니다.",
+        "NSBluetoothPeripheralUsageDescription": "이 앱은 블루투스를 사용하려고 합니다.",
+        "NSSpeechRecognitionUsageDescription": "이 앱은 음성 인식 기능을 사용하려고 합니다.",
+        "NSContactsUsageDescription": "이 앱은 연락처에 접근하려고 합니다.",
+        "NSMotionUsageDescription": "이 앱은 모션 센서 데이터를 사용하려고 합니다.",
+        "NSRemindersUsageDescription": "이 앱은 리마인더에 접근하려고 합니다.",
+        "NSCalendarsUsageDescription": "이 앱은 캘린더에 접근하려고 합니다."
+      }
     },
     "android": {
       "adaptiveIcon": {
