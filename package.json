@@ -8,9 +8,14 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build:android": "eas build -p android --profile preview",
-    "build:ios": "eas build -p ios --profile preview",
-    "build:all": "eas build -p all"
+    "build:android": "eas build --profile development --platform android",
+    "build:ios": "eas build --profile development-simulator --platform ios",
+    "build:all": "eas build -p all",
+    "preview:android": "eas build --profile preview --platform android",
+    "preview:ios": "eas build --profile preview --platform ios",
+    "publish": "eas build --profile production --platform all",
+    "postpublish": "eas submit --platform all",
+    "prevPublish": "expo publish --release-channel preview"
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
@@ -19,6 +24,7 @@
     "expo": "~47.0.8",
     "expo-av": "~13.0.3",
     "expo-camera": "~13.1.0",
+    "expo-dev-client": "~2.0.1",
     "expo-image-manipulator": "~11.0.0",
     "expo-image-picker": "~14.0.2",
     "expo-location": "~15.0.1",

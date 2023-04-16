@@ -6,6 +6,7 @@ import Button from './components/Button';
 // import WebView from 'react-native-webview';
 import * as Location from 'expo-location';
 import Speech from './Screens/Speech';
+import Recognizer from './Screens/Recognizer';
 
 const PlaceholderImage = require('./assets/background-image.png');
 
@@ -47,7 +48,8 @@ export default function App() {
         {/* <Text style={styles.paragraph}>forground location {text1}</Text> */}
         {/* <Text style={{ color: '#fff' }}>{location1}</Text>
         <Text style={{ color: '#fff' }}>{errorMsg1}</Text> */}
-        <Speech />
+        {/* <Speech /> */}
+        <Recognizer />
       </View>
       {/* <View style={styles.footerContainer}>
         <Button theme="primary" label="Set current location" onPress={onPressFunction} />
